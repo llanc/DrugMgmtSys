@@ -1,0 +1,12 @@
+C:\Users\91326\Desktop\DrugMgmtSys\DrugMgmtSysCodes\DrugMgmtSys\DrugMgmtSys\bin\Debug\DrugMgmtSys.exe.config
+C:\Users\91326\Desktop\DrugMgmtSys\DrugMgmtSysCodes\DrugMgmtSys\DrugMgmtSys\bin\Debug\DrugMgmtSys.exe
+C:\Users\91326\Desktop\DrugMgmtSys\DrugMgmtSysCodes\DrugMgmtSys\DrugMgmtSys\bin\Debug\DrugMgmtSys.pdb
+C:\Users\91326\Desktop\DrugMgmtSys\DrugMgmtSysCodes\DrugMgmtSys\DrugMgmtSys\obj\Debug\DrugMgmtSys.csprojResolveAssemblyReference.cache
+C:\Users\91326\Desktop\DrugMgmtSys\DrugMgmtSysCodes\DrugMgmtSys\DrugMgmtSys\obj\Debug\DrugMgmtSys.Properties.Resources.resources
+C:\Users\91326\Desktop\DrugMgmtSys\DrugMgmtSysCodes\DrugMgmtSys\DrugMgmtSys\obj\Debug\DrugMgmtSys.csproj.GenerateResource.Cache
+C:\Users\91326\Desktop\DrugMgmtSys\DrugMgmtSysCodes\DrugMgmtSys\DrugMgmtSys\obj\Debug\DrugMgmtSys.exe
+C:\Users\91326\Desktop\DrugMgmtSys\DrugMgmtSysCodes\DrugMgmtSys\DrugMgmtSys\obj\Debug\DrugMgmtSys.pdb
+C:\Users\91326\Desktop\DrugMgmtSys\DrugMgmtSysCodes\DrugMgmtSys\DrugMgmtSys\bin\Debug\MySql.Data.dll
+C:\Users\91326\Desktop\DrugMgmtSys\DrugMgmtSysCodes\DrugMgmtSys\DrugMgmtSys\bin\Debug\MySql.Data.xml
+C:\Users\91326\Desktop\DrugMgmtSys\DrugMgmtSysCodes\DrugMgmtSys\DrugMgmtSys\obj\Debug\DrugMgmtSys.Main.resources
+C:\Users\91326\Desktop\DrugMgmtSys\DrugMgmtSysCodes\DrugMgmtSys\DrugMgmtSys\obj\Debug\DrugMgmtSys.InputNumDiaLog.resources
