@@ -24,14 +24,36 @@ namespace DrugMgmtSys
             BindAll_X();
         }
 
+
+        #region 查询按钮
+
+        /// <summary>
+        /// 药品销售页面查询按钮
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
             //查询
-            BindByTrim();
+            BindByTrim_X();
         }
 
         /// <summary>
-        /// 查询所有并绑定
+        /// 库存页面查询按钮
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button6_Click(object sender, EventArgs e)
+        {
+            BindByTrim_K();
+        }
+
+        #endregion
+
+        #region 查询所有并绑定
+
+        /// <summary>
+        /// 销售页面查询所有并绑定
         /// </summary>
         protected void BindAll_X()
         {
@@ -42,26 +64,81 @@ namespace DrugMgmtSys
         }
 
         /// <summary>
-        /// 按条件绑定
+        /// 库存页面查询所有并绑定
         /// </summary>
-        protected void BindByTrim()
+        protected void BindAll_K()
+        {
+
+            string sql_select_drug_K = "SELECT d_id,d_name,u_name,d_spec,d_origin,d_lot_num,d_reserve,d_w_price,d_r_price FROM tb_drug INNER JOIN tb_unit ON d_unit = u_id WHERE d_unit = u_id";
+            DataSet ds = MySqlTools.GetDataSet(sql_select_drug_K);
+            dataGridView_K.DataSource = ds.Tables[0];
+        }
+
+        #endregion
+
+        #region 条件查询并绑定
+
+        /// <summary>
+        /// 销售页面按条件绑定
+        /// </summary>
+        private void BindByTrim_X()
         {
             string d_name = string.Format("'%{0}%'", textBox_select_X.Text);
             string sql_select_by_d_name = "SELECT d_id,d_name,u_name,d_spec,d_reserve,d_r_price FROM tb_drug INNER JOIN tb_unit ON d_unit = u_id WHERE d_unit = u_id AND d_name LIKE " + d_name;
             DataSet ds = MySqlTools.GetDataSet(sql_select_by_d_name);
             dataGridView_X.DataSource = ds.Tables[0];
         }
+        /// <summary>
+        /// 库存页面按条件绑定
+        /// </summary>
+        private void BindByTrim_K()
+        {
+            string d_name = string.Format("'%{0}%'", textBox_select_K.Text);
+            string sql_select_by_d_name = "SELECT d_id, d_name, u_name, d_spec, d_origin, d_lot_num, d_reserve, d_w_price, d_r_price FROM tb_drug INNER JOIN tb_unit ON d_unit = u_id WHERE d_unit = u_id AND d_name LIKE " + d_name;
+            DataSet ds = MySqlTools.GetDataSet(sql_select_by_d_name);
+            dataGridView_K.DataSource = ds.Tables[0];
+        }
 
+        #endregion
+
+        #region 显示全部按钮
+
+        /// <summary>
+        /// 销售页面显示全部按钮
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button5_Click(object sender, EventArgs e)
         {
             BindAll_X();
         }
 
+        /// <summary>
+        /// 库存页面显示全部按钮
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button7_Click(object sender, EventArgs e)
+        {
+            BindAll_K();
+        }
+
+        #endregion
+
+        #region 清空文本框
+
         private void textBox_select_X_MouseClick(object sender, MouseEventArgs e)
         {
             textBox_select_X.Text = "";
         }
+        private void textBox_select_K_MouseClick(object sender, MouseEventArgs e)
+        {
+            textBox_select_K.Text = "";
+        }
 
+        #endregion
+
+        #region 出售按钮
         private void dataGridView_X_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex!=0||e.RowIndex==-1)
@@ -72,17 +149,23 @@ namespace DrugMgmtSys
             double num=getIntputNum();
 
             bool b = false;
+
             //获取当前行的索引
             int index=dataGridView_X.CurrentCell.RowIndex;
             //获取当前行对应的“编号”列的值（主键） 
             int key=Int32.Parse(dataGridView_X.Rows[index].Cells["编号"].Value.ToString());
 
+            //更新库存
             updateReserve(num, key, false);
 
             BindAll_X();
         }
+
+        #endregion
+
+        #region 获取输入
         /// <summary>
-        /// 获取用户输入
+        /// 获取用户输入数量
         /// </summary>
         /// <returns>输入的值</returns>
         private double getIntputNum()
@@ -90,8 +173,11 @@ namespace DrugMgmtSys
             InputNumDiaLog form = new InputNumDiaLog();
             form.ShowDialog();
             return form.Input; 
-
         }
+
+        #endregion
+
+        #region 数据更新
         /// <summary>
         /// 更新库存方法
         /// </summary>
@@ -141,6 +227,83 @@ namespace DrugMgmtSys
                 }
             }
         }
+        
+
+        //TODO：编写药品信息修改方法,使用对象
+
+        //TODO：编写药品信息删除方法
+
+        #endregion
+
+        #region 选项卡切换处理
+        /// <summary>
+        /// 更改选项卡后触发的事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void tabControl_main_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            String i = tabControl_main.SelectedTab.Text;
+            switch (i)
+            {
+                case "药品销售（X）":
+                    BindAll_X();
+                    break;
+                case "药品库存信息管理（K）":
+                    BindAll_K();
+                    break;
+                case "药品计量单位管理（D）":
+
+                    break;
+                case "使用帮助（H）":
+
+                    break;
+            }
+        }
+
+
+
+        #endregion
+
+        #region 添加信息
+
+        /// <summary>
+        /// 添加药品
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button2_Click(object sender, EventArgs e)
+        {
+            //TODO：添加药品功能实现
+        }
+
+
+        #endregion
+
+        #region 库存页面删除、修改按钮
+
+        /// <summary>
+        /// 修改药品信息按钮事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button4_Click(object sender, EventArgs e)
+        {
+            //TODO：修改药品信息的方法调用
+        }
+
+        /// <summary>
+        /// 删除按钮事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button3_Click(object sender, EventArgs e)
+        {
+            //TODO：删除药品信息方法的调用
+        }
+
+        #endregion
+
     }
 }
 

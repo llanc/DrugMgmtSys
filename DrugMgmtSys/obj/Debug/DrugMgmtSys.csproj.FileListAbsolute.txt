@@ -10,3 +10,15 @@ C:\Users\91326\Desktop\DrugMgmtSys\DrugMgmtSysCodes\DrugMgmtSys\DrugMgmtSys\bin\
 C:\Users\91326\Desktop\DrugMgmtSys\DrugMgmtSysCodes\DrugMgmtSys\DrugMgmtSys\bin\Debug\MySql.Data.xml
 C:\Users\91326\Desktop\DrugMgmtSys\DrugMgmtSysCodes\DrugMgmtSys\DrugMgmtSys\obj\Debug\DrugMgmtSys.Main.resources
 C:\Users\91326\Desktop\DrugMgmtSys\DrugMgmtSysCodes\DrugMgmtSys\DrugMgmtSys\obj\Debug\DrugMgmtSys.InputNumDiaLog.resources
+D:\C#项目\DrugMgmtSys\DrugMgmtSys\bin\Debug\DrugMgmtSys.exe.config
+D:\C#项目\DrugMgmtSys\DrugMgmtSys\obj\Debug\DrugMgmtSys.exe
+D:\C#项目\DrugMgmtSys\DrugMgmtSys\obj\Debug\DrugMgmtSys.pdb
+D:\C#项目\DrugMgmtSys\DrugMgmtSys\bin\Debug\DrugMgmtSys.exe
+D:\C#项目\DrugMgmtSys\DrugMgmtSys\bin\Debug\DrugMgmtSys.pdb
+D:\C#项目\DrugMgmtSys\DrugMgmtSys\bin\Debug\MySql.Data.dll
+D:\C#项目\DrugMgmtSys\DrugMgmtSys\bin\Debug\MySql.Data.xml
+D:\C#项目\DrugMgmtSys\DrugMgmtSys\obj\Debug\DrugMgmtSys.csprojResolveAssemblyReference.cache
+D:\C#项目\DrugMgmtSys\DrugMgmtSys\obj\Debug\DrugMgmtSys.InputNumDiaLog.resources
+D:\C#项目\DrugMgmtSys\DrugMgmtSys\obj\Debug\DrugMgmtSys.Main.resources
+D:\C#项目\DrugMgmtSys\DrugMgmtSys\obj\Debug\DrugMgmtSys.Properties.Resources.resources
+D:\C#项目\DrugMgmtSys\DrugMgmtSys\obj\Debug\DrugMgmtSys.csproj.GenerateResource.Cache
