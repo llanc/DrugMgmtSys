@@ -265,7 +265,7 @@ namespace DrugMgmtSys
 
         #endregion
 
-        #region 添加信息
+        #region 添加数据
 
         /// <summary>
         /// 添加药品
@@ -303,6 +303,8 @@ namespace DrugMgmtSys
         }
 
         #endregion
+
+
 
     }
 }
