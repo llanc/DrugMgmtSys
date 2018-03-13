@@ -71,7 +71,16 @@ namespace DrugMgmtSys
 
             string sql_select_drug_K = "SELECT d_id,d_name,u_name,d_spec,d_origin,d_lot_num,d_reserve,d_w_price,d_r_price FROM tb_drug INNER JOIN tb_unit ON d_unit = u_id WHERE d_unit = u_id";
             DataSet ds = MySqlTools.GetDataSet(sql_select_drug_K);
-            dataGridView_K.DataSource = ds.Tables[0];
+
+            DataTable dt = ds.Tables[0];
+            //添加一列“tb_progit”
+            dt.Columns.Add("tb_progit");
+            //为该列的每一行赋值
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                dt.Rows[i]["tb_progit"] = Convert.ToDouble(dt.Rows[i][8]) - Convert.ToDouble(dt.Rows[i][7]);
+            }
+            dataGridView_K.DataSource = dt;
         }
 
         #endregion
@@ -175,6 +184,12 @@ namespace DrugMgmtSys
             return form.Input; 
         }
 
+        private string[] getInfo()
+        {
+            InfoMgmtForm infoForm = new InfoMgmtForm();
+            infoForm.ShowDialog();
+        }
+
         #endregion
 
         #region 数据更新
@@ -274,7 +289,7 @@ namespace DrugMgmtSys
         /// <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)
         {
-            //TODO：添加药品功能实现
+            
         }
 
 
@@ -303,8 +318,7 @@ namespace DrugMgmtSys
         }
 
         #endregion
-
-
+        
 
     }
 }

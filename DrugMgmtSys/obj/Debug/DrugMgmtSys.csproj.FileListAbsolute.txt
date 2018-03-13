@@ -22,3 +22,4 @@ D:\C#项目\DrugMgmtSys\DrugMgmtSys\obj\Debug\DrugMgmtSys.InputNumDiaLog.resourc
 D:\C#项目\DrugMgmtSys\DrugMgmtSys\obj\Debug\DrugMgmtSys.Main.resources
 D:\C#项目\DrugMgmtSys\DrugMgmtSys\obj\Debug\DrugMgmtSys.Properties.Resources.resources
 D:\C#项目\DrugMgmtSys\DrugMgmtSys\obj\Debug\DrugMgmtSys.csproj.GenerateResource.Cache
+D:\C#项目\DrugMgmtSys\DrugMgmtSys\obj\Debug\DrugMgmtSys.InfoMgmtForm.resources

@@ -31,32 +31,32 @@
             this.lb_head = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.tb_origin = new System.Windows.Forms.TextBox();
+            this.cb_unit = new System.Windows.Forms.ComboBox();
+            this.nud_r_price = new System.Windows.Forms.NumericUpDown();
+            this.nud_w_price = new System.Windows.Forms.NumericUpDown();
+            this.nud_reserve = new System.Windows.Forms.NumericUpDown();
+            this.tb_lot_num = new System.Windows.Forms.TextBox();
+            this.tb_spec = new System.Windows.Forms.TextBox();
+            this.tb_name = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.btn_add = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.tb_name = new System.Windows.Forms.TextBox();
-            this.tb_spec = new System.Windows.Forms.TextBox();
-            this.tb_lot_num = new System.Windows.Forms.TextBox();
-            this.nud_reserve = new System.Windows.Forms.NumericUpDown();
-            this.nud_w_price = new System.Windows.Forms.NumericUpDown();
-            this.nud_r_price = new System.Windows.Forms.NumericUpDown();
-            this.cb_unit = new System.Windows.Forms.ComboBox();
-            this.tb_origin = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nud_reserve)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nud_w_price)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_r_price)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_w_price)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_reserve)).BeginInit();
             this.SuspendLayout();
             // 
             // lb_head
@@ -97,36 +97,140 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "红色为必填项";
             // 
-            // label1
+            // groupBox2
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("华文楷体", 14F, System.Drawing.FontStyle.Bold);
-            this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(6, 31);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(110, 21);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "药品名称：";
+            this.groupBox2.Controls.Add(this.tb_origin);
+            this.groupBox2.Controls.Add(this.cb_unit);
+            this.groupBox2.Controls.Add(this.nud_r_price);
+            this.groupBox2.Controls.Add(this.nud_w_price);
+            this.groupBox2.Controls.Add(this.nud_reserve);
+            this.groupBox2.Controls.Add(this.tb_lot_num);
+            this.groupBox2.Controls.Add(this.tb_spec);
+            this.groupBox2.Controls.Add(this.tb_name);
+            this.groupBox2.Location = new System.Drawing.Point(102, 11);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(271, 375);
+            this.groupBox2.TabIndex = 9;
+            this.groupBox2.TabStop = false;
             // 
-            // label3
+            // tb_origin
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("华文楷体", 14F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(46, 165);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(70, 21);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "产地：";
+            this.tb_origin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tb_origin.Font = new System.Drawing.Font("宋体", 12F);
+            this.tb_origin.Location = new System.Drawing.Point(20, 154);
+            this.tb_origin.Name = "tb_origin";
+            this.tb_origin.Size = new System.Drawing.Size(245, 26);
+            this.tb_origin.TabIndex = 9;
             // 
-            // label4
+            // cb_unit
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("华文楷体", 14F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(46, 117);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(70, 21);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "规格：";
+            this.cb_unit.Font = new System.Drawing.Font("楷体", 12F);
+            this.cb_unit.FormattingEnabled = true;
+            this.cb_unit.Location = new System.Drawing.Point(20, 63);
+            this.cb_unit.Name = "cb_unit";
+            this.cb_unit.Size = new System.Drawing.Size(121, 24);
+            this.cb_unit.TabIndex = 8;
+            this.cb_unit.Text = "请选择单位";
+            // 
+            // nud_r_price
+            // 
+            this.nud_r_price.Font = new System.Drawing.Font("楷体", 14F);
+            this.nud_r_price.Location = new System.Drawing.Point(21, 337);
+            this.nud_r_price.Name = "nud_r_price";
+            this.nud_r_price.Size = new System.Drawing.Size(120, 29);
+            this.nud_r_price.TabIndex = 7;
+            this.nud_r_price.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.nud_r_price.UpDownAlign = System.Windows.Forms.LeftRightAlignment.Left;
+            // 
+            // nud_w_price
+            // 
+            this.nud_w_price.Font = new System.Drawing.Font("楷体", 14F);
+            this.nud_w_price.Location = new System.Drawing.Point(21, 293);
+            this.nud_w_price.Name = "nud_w_price";
+            this.nud_w_price.Size = new System.Drawing.Size(120, 29);
+            this.nud_w_price.TabIndex = 6;
+            this.nud_w_price.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.nud_w_price.UpDownAlign = System.Windows.Forms.LeftRightAlignment.Left;
+            // 
+            // nud_reserve
+            // 
+            this.nud_reserve.Font = new System.Drawing.Font("楷体", 14F);
+            this.nud_reserve.Location = new System.Drawing.Point(21, 246);
+            this.nud_reserve.Name = "nud_reserve";
+            this.nud_reserve.Size = new System.Drawing.Size(120, 29);
+            this.nud_reserve.TabIndex = 5;
+            this.nud_reserve.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.nud_reserve.UpDownAlign = System.Windows.Forms.LeftRightAlignment.Left;
+            // 
+            // tb_lot_num
+            // 
+            this.tb_lot_num.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tb_lot_num.Font = new System.Drawing.Font("宋体", 12F);
+            this.tb_lot_num.Location = new System.Drawing.Point(20, 201);
+            this.tb_lot_num.Name = "tb_lot_num";
+            this.tb_lot_num.Size = new System.Drawing.Size(245, 26);
+            this.tb_lot_num.TabIndex = 4;
+            // 
+            // tb_spec
+            // 
+            this.tb_spec.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tb_spec.Font = new System.Drawing.Font("宋体", 12F);
+            this.tb_spec.Location = new System.Drawing.Point(20, 106);
+            this.tb_spec.Name = "tb_spec";
+            this.tb_spec.Size = new System.Drawing.Size(206, 26);
+            this.tb_spec.TabIndex = 2;
+            // 
+            // tb_name
+            // 
+            this.tb_name.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tb_name.Font = new System.Drawing.Font("宋体", 12F);
+            this.tb_name.Location = new System.Drawing.Point(20, 20);
+            this.tb_name.Name = "tb_name";
+            this.tb_name.Size = new System.Drawing.Size(245, 26);
+            this.tb_name.TabIndex = 0;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("华文楷体", 14F, System.Drawing.FontStyle.Bold);
+            this.label10.ForeColor = System.Drawing.Color.Red;
+            this.label10.Location = new System.Drawing.Point(26, 350);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(90, 21);
+            this.label10.TabIndex = 8;
+            this.label10.Text = "零售价：";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("华文楷体", 14F, System.Drawing.FontStyle.Bold);
+            this.label8.Location = new System.Drawing.Point(46, 212);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(70, 21);
+            this.label8.TabIndex = 6;
+            this.label8.Text = "批号：";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("华文楷体", 14F, System.Drawing.FontStyle.Bold);
+            this.label7.ForeColor = System.Drawing.Color.Red;
+            this.label7.Location = new System.Drawing.Point(26, 259);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(90, 21);
+            this.label7.TabIndex = 5;
+            this.label7.Text = "库存量：";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("华文楷体", 14F, System.Drawing.FontStyle.Bold);
+            this.label6.ForeColor = System.Drawing.Color.Red;
+            this.label6.Location = new System.Drawing.Point(26, 306);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(90, 21);
+            this.label6.TabIndex = 4;
+            this.label6.Text = "批发价：";
             // 
             // label5
             // 
@@ -140,37 +244,36 @@
             this.label5.Text = "单位：";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label6
+            // label4
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("华文楷体", 14F, System.Drawing.FontStyle.Bold);
-            this.label6.ForeColor = System.Drawing.Color.Red;
-            this.label6.Location = new System.Drawing.Point(26, 306);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(90, 21);
-            this.label6.TabIndex = 4;
-            this.label6.Text = "批发价：";
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("华文楷体", 14F, System.Drawing.FontStyle.Bold);
+            this.label4.Location = new System.Drawing.Point(46, 117);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(70, 21);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "规格：";
             // 
-            // label7
+            // label3
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("华文楷体", 14F, System.Drawing.FontStyle.Bold);
-            this.label7.ForeColor = System.Drawing.Color.Red;
-            this.label7.Location = new System.Drawing.Point(26, 259);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(90, 21);
-            this.label7.TabIndex = 5;
-            this.label7.Text = "库存量：";
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("华文楷体", 14F, System.Drawing.FontStyle.Bold);
+            this.label3.Location = new System.Drawing.Point(46, 165);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(70, 21);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "产地：";
             // 
-            // label8
+            // label1
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("华文楷体", 14F, System.Drawing.FontStyle.Bold);
-            this.label8.Location = new System.Drawing.Point(46, 212);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(70, 21);
-            this.label8.TabIndex = 6;
-            this.label8.Text = "批号：";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("华文楷体", 14F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.Location = new System.Drawing.Point(6, 31);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(110, 21);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "药品名称：";
             // 
             // label9
             // 
@@ -181,17 +284,6 @@
             this.label9.Size = new System.Drawing.Size(70, 21);
             this.label9.TabIndex = 7;
             this.label9.Text = "利润：";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("华文楷体", 14F, System.Drawing.FontStyle.Bold);
-            this.label10.ForeColor = System.Drawing.Color.Red;
-            this.label10.Location = new System.Drawing.Point(26, 350);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(90, 21);
-            this.label10.TabIndex = 8;
-            this.label10.Text = "零售价：";
             // 
             // label11
             // 
@@ -213,6 +305,7 @@
             this.btn_add.TabIndex = 9;
             this.btn_add.Text = "添加";
             this.btn_add.UseVisualStyleBackColor = true;
+            this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
             // button1
             // 
@@ -223,103 +316,13 @@
             this.button1.TabIndex = 10;
             this.button1.Text = "清空";
             this.button1.UseVisualStyleBackColor = true;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.tb_origin);
-            this.groupBox2.Controls.Add(this.cb_unit);
-            this.groupBox2.Controls.Add(this.nud_r_price);
-            this.groupBox2.Controls.Add(this.nud_w_price);
-            this.groupBox2.Controls.Add(this.nud_reserve);
-            this.groupBox2.Controls.Add(this.tb_lot_num);
-            this.groupBox2.Controls.Add(this.tb_spec);
-            this.groupBox2.Controls.Add(this.tb_name);
-            this.groupBox2.Location = new System.Drawing.Point(102, 11);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(271, 375);
-            this.groupBox2.TabIndex = 9;
-            this.groupBox2.TabStop = false;
-            // 
-            // tb_name
-            // 
-            this.tb_name.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tb_name.Font = new System.Drawing.Font("宋体", 12F);
-            this.tb_name.Location = new System.Drawing.Point(20, 20);
-            this.tb_name.Name = "tb_name";
-            this.tb_name.Size = new System.Drawing.Size(245, 26);
-            this.tb_name.TabIndex = 0;
-            // 
-            // tb_spec
-            // 
-            this.tb_spec.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tb_spec.Font = new System.Drawing.Font("宋体", 12F);
-            this.tb_spec.Location = new System.Drawing.Point(20, 106);
-            this.tb_spec.Name = "tb_spec";
-            this.tb_spec.Size = new System.Drawing.Size(206, 26);
-            this.tb_spec.TabIndex = 2;
-            // 
-            // tb_lot_num
-            // 
-            this.tb_lot_num.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tb_lot_num.Font = new System.Drawing.Font("宋体", 12F);
-            this.tb_lot_num.Location = new System.Drawing.Point(20, 201);
-            this.tb_lot_num.Name = "tb_lot_num";
-            this.tb_lot_num.Size = new System.Drawing.Size(245, 26);
-            this.tb_lot_num.TabIndex = 4;
-            // 
-            // nud_reserve
-            // 
-            this.nud_reserve.Font = new System.Drawing.Font("楷体", 14F);
-            this.nud_reserve.Location = new System.Drawing.Point(21, 246);
-            this.nud_reserve.Name = "nud_reserve";
-            this.nud_reserve.Size = new System.Drawing.Size(120, 29);
-            this.nud_reserve.TabIndex = 5;
-            this.nud_reserve.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.nud_reserve.UpDownAlign = System.Windows.Forms.LeftRightAlignment.Left;
-            // 
-            // nud_w_price
-            // 
-            this.nud_w_price.Font = new System.Drawing.Font("楷体", 14F);
-            this.nud_w_price.Location = new System.Drawing.Point(21, 293);
-            this.nud_w_price.Name = "nud_w_price";
-            this.nud_w_price.Size = new System.Drawing.Size(120, 29);
-            this.nud_w_price.TabIndex = 6;
-            this.nud_w_price.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.nud_w_price.UpDownAlign = System.Windows.Forms.LeftRightAlignment.Left;
-            // 
-            // nud_r_price
-            // 
-            this.nud_r_price.Font = new System.Drawing.Font("楷体", 14F);
-            this.nud_r_price.Location = new System.Drawing.Point(21, 337);
-            this.nud_r_price.Name = "nud_r_price";
-            this.nud_r_price.Size = new System.Drawing.Size(120, 29);
-            this.nud_r_price.TabIndex = 7;
-            this.nud_r_price.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.nud_r_price.UpDownAlign = System.Windows.Forms.LeftRightAlignment.Left;
-            // 
-            // cb_unit
-            // 
-            this.cb_unit.Font = new System.Drawing.Font("楷体", 12F);
-            this.cb_unit.FormattingEnabled = true;
-            this.cb_unit.Location = new System.Drawing.Point(20, 63);
-            this.cb_unit.Name = "cb_unit";
-            this.cb_unit.Size = new System.Drawing.Size(121, 24);
-            this.cb_unit.TabIndex = 8;
-            // 
-            // tb_origin
-            // 
-            this.tb_origin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tb_origin.Font = new System.Drawing.Font("宋体", 12F);
-            this.tb_origin.Location = new System.Drawing.Point(20, 154);
-            this.tb_origin.Name = "tb_origin";
-            this.tb_origin.Size = new System.Drawing.Size(245, 26);
-            this.tb_origin.TabIndex = 9;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // InfoMgmtForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(404, 539);
+            this.ClientSize = new System.Drawing.Size(404, 541);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btn_add);
             this.Controls.Add(this.label11);
@@ -327,15 +330,22 @@
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lb_head);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(420, 580);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(420, 580);
             this.Name = "InfoMgmtForm";
+            this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "药品信息添加";
+            this.TopMost = true;
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nud_reserve)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nud_w_price)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_r_price)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_w_price)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_reserve)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -28,25 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle172 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle179 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle173 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle174 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle175 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle176 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle177 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle178 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle180 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle190 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle181 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle182 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle183 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle184 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle185 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle186 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle187 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle188 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle189 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView_X = new System.Windows.Forms.DataGridView();
             this.编号 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.出售该药品 = new System.Windows.Forms.DataGridViewButtonColumn();
@@ -68,6 +68,11 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.button7 = new System.Windows.Forms.Button();
             this.dataGridView_K = new System.Windows.Forms.DataGridView();
+            this.button6 = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBox_select_K = new System.Windows.Forms.TextBox();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -78,11 +83,6 @@
             this.批发价 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.利润 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button6 = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox_select_K = new System.Windows.Forms.TextBox();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_X)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.tabControl_main.SuspendLayout();
@@ -102,14 +102,14 @@
             this.dataGridView_X.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView_X.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
             this.dataGridView_X.BackgroundColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle172.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle172.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle172.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle172.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle172.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle172.SelectionForeColor = System.Drawing.Color.LightSkyBlue;
-            dataGridViewCellStyle172.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_X.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle172;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.LightSkyBlue;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_X.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView_X.ColumnHeadersHeight = 40;
             this.dataGridView_X.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.编号,
@@ -119,14 +119,14 @@
             this.规格,
             this.库存余量,
             this.零售价});
-            dataGridViewCellStyle179.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle179.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle179.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle179.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle179.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle179.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle179.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView_X.DefaultCellStyle = dataGridViewCellStyle179;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView_X.DefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridView_X.Location = new System.Drawing.Point(3, 63);
             this.dataGridView_X.Name = "dataGridView_X";
             this.dataGridView_X.ReadOnly = true;
@@ -148,13 +148,13 @@
             // 出售该药品
             // 
             this.出售该药品.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle173.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle173.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle173.Font = new System.Drawing.Font("楷体", 14F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle173.ForeColor = System.Drawing.Color.OrangeRed;
-            dataGridViewCellStyle173.SelectionBackColor = System.Drawing.Color.ForestGreen;
-            dataGridViewCellStyle173.SelectionForeColor = System.Drawing.Color.White;
-            this.出售该药品.DefaultCellStyle = dataGridViewCellStyle173;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("楷体", 14F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.OrangeRed;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.ForestGreen;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            this.出售该药品.DefaultCellStyle = dataGridViewCellStyle2;
             this.出售该药品.HeaderText = "出售该药品";
             this.出售该药品.Name = "出售该药品";
             this.出售该药品.ReadOnly = true;
@@ -168,8 +168,8 @@
             // 药品名称
             // 
             this.药品名称.DataPropertyName = "d_name";
-            dataGridViewCellStyle174.Font = new System.Drawing.Font("宋体", 14F);
-            this.药品名称.DefaultCellStyle = dataGridViewCellStyle174;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("宋体", 14F);
+            this.药品名称.DefaultCellStyle = dataGridViewCellStyle3;
             this.药品名称.HeaderText = "药品名称";
             this.药品名称.Name = "药品名称";
             this.药品名称.ReadOnly = true;
@@ -177,8 +177,8 @@
             // 单位
             // 
             this.单位.DataPropertyName = "u_name";
-            dataGridViewCellStyle175.Font = new System.Drawing.Font("宋体", 14F);
-            this.单位.DefaultCellStyle = dataGridViewCellStyle175;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("宋体", 14F);
+            this.单位.DefaultCellStyle = dataGridViewCellStyle4;
             this.单位.HeaderText = "单位";
             this.单位.Name = "单位";
             this.单位.ReadOnly = true;
@@ -186,8 +186,8 @@
             // 规格
             // 
             this.规格.DataPropertyName = "d_spec";
-            dataGridViewCellStyle176.Font = new System.Drawing.Font("宋体", 14F);
-            this.规格.DefaultCellStyle = dataGridViewCellStyle176;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("宋体", 14F);
+            this.规格.DefaultCellStyle = dataGridViewCellStyle5;
             this.规格.HeaderText = "规格";
             this.规格.Name = "规格";
             this.规格.ReadOnly = true;
@@ -195,8 +195,8 @@
             // 库存余量
             // 
             this.库存余量.DataPropertyName = "d_reserve";
-            dataGridViewCellStyle177.Font = new System.Drawing.Font("宋体", 14F);
-            this.库存余量.DefaultCellStyle = dataGridViewCellStyle177;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("宋体", 14F);
+            this.库存余量.DefaultCellStyle = dataGridViewCellStyle6;
             this.库存余量.HeaderText = "库存余量";
             this.库存余量.Name = "库存余量";
             this.库存余量.ReadOnly = true;
@@ -204,8 +204,8 @@
             // 零售价
             // 
             this.零售价.DataPropertyName = "d_r_price";
-            dataGridViewCellStyle178.Font = new System.Drawing.Font("宋体", 14F);
-            this.零售价.DefaultCellStyle = dataGridViewCellStyle178;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("宋体", 14F);
+            this.零售价.DefaultCellStyle = dataGridViewCellStyle7;
             this.零售价.HeaderText = "零售价";
             this.零售价.Name = "零售价";
             this.零售价.ReadOnly = true;
@@ -371,14 +371,14 @@
             this.dataGridView_K.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView_K.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
             this.dataGridView_K.BackgroundColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle180.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle180.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle180.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle180.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle180.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle180.SelectionForeColor = System.Drawing.Color.LightSkyBlue;
-            dataGridViewCellStyle180.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_K.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle180;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.LightSkyBlue;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_K.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridView_K.ColumnHeadersHeight = 40;
             this.dataGridView_K.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -391,14 +391,14 @@
             this.批发价,
             this.dataGridViewTextBoxColumn6,
             this.利润});
-            dataGridViewCellStyle190.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle190.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle190.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle190.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle190.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle190.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle190.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView_K.DefaultCellStyle = dataGridViewCellStyle190;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView_K.DefaultCellStyle = dataGridViewCellStyle19;
             this.dataGridView_K.Location = new System.Drawing.Point(3, 63);
             this.dataGridView_K.Name = "dataGridView_K";
             this.dataGridView_K.ReadOnly = true;
@@ -406,124 +406,6 @@
             this.dataGridView_K.Size = new System.Drawing.Size(963, 442);
             this.dataGridView_K.TabIndex = 10;
             this.dataGridView_K.VirtualMode = true;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "d_id";
-            this.dataGridViewTextBoxColumn1.HeaderText = "编号";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "d_name";
-            dataGridViewCellStyle181.Font = new System.Drawing.Font("宋体", 14F);
-            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle181;
-            this.dataGridViewTextBoxColumn2.FillWeight = 3.629086F;
-            this.dataGridViewTextBoxColumn2.HeaderText = "药品名称";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 130;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "u_name";
-            dataGridViewCellStyle182.Font = new System.Drawing.Font("宋体", 14F);
-            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle182;
-            this.dataGridViewTextBoxColumn3.FillWeight = 3.175156F;
-            this.dataGridViewTextBoxColumn3.HeaderText = "单位";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 55;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 55;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "d_spec";
-            dataGridViewCellStyle183.Font = new System.Drawing.Font("宋体", 14F);
-            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle183;
-            this.dataGridViewTextBoxColumn4.FillWeight = 7.913F;
-            this.dataGridViewTextBoxColumn4.HeaderText = "规格";
-            this.dataGridViewTextBoxColumn4.MinimumWidth = 85;
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Width = 85;
-            // 
-            // 产地
-            // 
-            this.产地.DataPropertyName = "d_origin";
-            dataGridViewCellStyle184.Font = new System.Drawing.Font("宋体", 14F);
-            this.产地.DefaultCellStyle = dataGridViewCellStyle184;
-            this.产地.FillWeight = 0.2966509F;
-            this.产地.HeaderText = "产地";
-            this.产地.MinimumWidth = 190;
-            this.产地.Name = "产地";
-            this.产地.ReadOnly = true;
-            // 
-            // 批号
-            // 
-            this.批号.DataPropertyName = "d_lot_num";
-            dataGridViewCellStyle185.Font = new System.Drawing.Font("宋体", 14F);
-            this.批号.DefaultCellStyle = dataGridViewCellStyle185;
-            this.批号.FillWeight = 14.59694F;
-            this.批号.HeaderText = "批号";
-            this.批号.MinimumWidth = 100;
-            this.批号.Name = "批号";
-            this.批号.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "d_reserve";
-            dataGridViewCellStyle186.Font = new System.Drawing.Font("宋体", 14F);
-            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle186;
-            this.dataGridViewTextBoxColumn5.FillWeight = 75.50784F;
-            this.dataGridViewTextBoxColumn5.HeaderText = "库存余量";
-            this.dataGridViewTextBoxColumn5.MinimumWidth = 100;
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            // 
-            // 批发价
-            // 
-            this.批发价.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.批发价.DataPropertyName = "d_w_price";
-            dataGridViewCellStyle187.Font = new System.Drawing.Font("宋体", 14F);
-            this.批发价.DefaultCellStyle = dataGridViewCellStyle187;
-            this.批发价.FillWeight = 135.6371F;
-            this.批发价.HeaderText = "批发价";
-            this.批发价.MinimumWidth = 75;
-            this.批发价.Name = "批发价";
-            this.批发价.ReadOnly = true;
-            this.批发价.Width = 75;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "d_r_price";
-            dataGridViewCellStyle188.Font = new System.Drawing.Font("宋体", 14F);
-            this.dataGridViewTextBoxColumn6.DefaultCellStyle = dataGridViewCellStyle188;
-            this.dataGridViewTextBoxColumn6.FillWeight = 310.6526F;
-            this.dataGridViewTextBoxColumn6.HeaderText = "零售价";
-            this.dataGridViewTextBoxColumn6.MinimumWidth = 75;
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            this.dataGridViewTextBoxColumn6.Width = 75;
-            // 
-            // 利润
-            // 
-            this.利润.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle189.Font = new System.Drawing.Font("宋体", 14F);
-            this.利润.DefaultCellStyle = dataGridViewCellStyle189;
-            this.利润.FillWeight = 348.5915F;
-            this.利润.HeaderText = "利润";
-            this.利润.MinimumWidth = 55;
-            this.利润.Name = "利润";
-            this.利润.ReadOnly = true;
-            this.利润.Width = 55;
             // 
             // button6
             // 
@@ -576,6 +458,125 @@
             this.tabPage4.Text = "使用帮助（H）";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "d_id";
+            this.dataGridViewTextBoxColumn1.HeaderText = "编号";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "d_name";
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("宋体", 14F);
+            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle10;
+            this.dataGridViewTextBoxColumn2.FillWeight = 3.629086F;
+            this.dataGridViewTextBoxColumn2.HeaderText = "药品名称";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 130;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "u_name";
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("宋体", 14F);
+            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle11;
+            this.dataGridViewTextBoxColumn3.FillWeight = 3.175156F;
+            this.dataGridViewTextBoxColumn3.HeaderText = "单位";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 55;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 55;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "d_spec";
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("宋体", 14F);
+            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle12;
+            this.dataGridViewTextBoxColumn4.FillWeight = 7.913F;
+            this.dataGridViewTextBoxColumn4.HeaderText = "规格";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 85;
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Width = 85;
+            // 
+            // 产地
+            // 
+            this.产地.DataPropertyName = "d_origin";
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("宋体", 14F);
+            this.产地.DefaultCellStyle = dataGridViewCellStyle13;
+            this.产地.FillWeight = 0.2966509F;
+            this.产地.HeaderText = "产地";
+            this.产地.MinimumWidth = 190;
+            this.产地.Name = "产地";
+            this.产地.ReadOnly = true;
+            // 
+            // 批号
+            // 
+            this.批号.DataPropertyName = "d_lot_num";
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("宋体", 14F);
+            this.批号.DefaultCellStyle = dataGridViewCellStyle14;
+            this.批号.FillWeight = 14.59694F;
+            this.批号.HeaderText = "批号";
+            this.批号.MinimumWidth = 100;
+            this.批号.Name = "批号";
+            this.批号.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "d_reserve";
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("宋体", 14F);
+            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle15;
+            this.dataGridViewTextBoxColumn5.FillWeight = 75.50784F;
+            this.dataGridViewTextBoxColumn5.HeaderText = "库存余量";
+            this.dataGridViewTextBoxColumn5.MinimumWidth = 100;
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // 批发价
+            // 
+            this.批发价.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.批发价.DataPropertyName = "d_w_price";
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("宋体", 14F);
+            this.批发价.DefaultCellStyle = dataGridViewCellStyle16;
+            this.批发价.FillWeight = 135.6371F;
+            this.批发价.HeaderText = "批发价";
+            this.批发价.MinimumWidth = 75;
+            this.批发价.Name = "批发价";
+            this.批发价.ReadOnly = true;
+            this.批发价.Width = 75;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "d_r_price";
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("宋体", 14F);
+            this.dataGridViewTextBoxColumn6.DefaultCellStyle = dataGridViewCellStyle17;
+            this.dataGridViewTextBoxColumn6.FillWeight = 310.6526F;
+            this.dataGridViewTextBoxColumn6.HeaderText = "零售价";
+            this.dataGridViewTextBoxColumn6.MinimumWidth = 75;
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.dataGridViewTextBoxColumn6.Width = 75;
+            // 
+            // 利润
+            // 
+            this.利润.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.利润.DataPropertyName = "tb_progit";
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("宋体", 14F);
+            this.利润.DefaultCellStyle = dataGridViewCellStyle18;
+            this.利润.FillWeight = 348.5915F;
+            this.利润.HeaderText = "利润";
+            this.利润.MinimumWidth = 55;
+            this.利润.Name = "利润";
+            this.利润.ReadOnly = true;
+            this.利润.Width = 55;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -625,6 +626,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 库存余量;
         private System.Windows.Forms.DataGridViewTextBoxColumn 零售价;
         private System.Windows.Forms.DataGridView dataGridView_K;
+        private System.Windows.Forms.Button button7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
@@ -635,7 +637,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 批发价;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn 利润;
-        private System.Windows.Forms.Button button7;
     }
 }
 

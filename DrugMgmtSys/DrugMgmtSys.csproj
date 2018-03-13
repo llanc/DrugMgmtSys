@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="codes\Drug.cs" />
     <Compile Include="codes\MySqlTools.cs" />
     <Compile Include="InfoMgmtForm.cs">
       <SubType>Form</SubType>

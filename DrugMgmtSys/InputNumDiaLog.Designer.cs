@@ -97,8 +97,10 @@
             this.MaximumSize = new System.Drawing.Size(245, 185);
             this.MinimizeBox = false;
             this.Name = "InputNumDiaLog";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "温馨提示";
+            this.TopMost = true;
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
