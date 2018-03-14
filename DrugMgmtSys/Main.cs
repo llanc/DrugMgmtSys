@@ -13,6 +13,8 @@ namespace DrugMgmtSys
 {
     public partial class Main : Form
     {
+        private int KEY;
+
         public Main()
         {
             InitializeComponent();
@@ -105,7 +107,16 @@ namespace DrugMgmtSys
             string d_name = string.Format("'%{0}%'", textBox_select_K.Text);
             string sql_select_by_d_name = "SELECT d_id, d_name, u_name, d_spec, d_origin, d_lot_num, d_reserve, d_w_price, d_r_price FROM tb_drug INNER JOIN tb_unit ON d_unit = u_id WHERE d_unit = u_id AND d_name LIKE " + d_name;
             DataSet ds = MySqlTools.GetDataSet(sql_select_by_d_name);
-            dataGridView_K.DataSource = ds.Tables[0];
+
+            DataTable dt = ds.Tables[0];
+            //添加一列“tb_progit”
+            dt.Columns.Add("tb_progit");
+            //为该列的每一行赋值
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                dt.Rows[i]["tb_progit"] = Convert.ToDouble(dt.Rows[i][8]) - Convert.ToDouble(dt.Rows[i][7]);
+            }
+            dataGridView_K.DataSource = dt;
         }
 
         #endregion
@@ -184,12 +195,6 @@ namespace DrugMgmtSys
             return form.Input; 
         }
 
-        private string[] getInfo()
-        {
-            InfoMgmtForm infoForm = new InfoMgmtForm();
-            infoForm.ShowDialog();
-        }
-
         #endregion
 
         #region 数据更新
@@ -242,11 +247,6 @@ namespace DrugMgmtSys
                 }
             }
         }
-        
-
-        //TODO：编写药品信息修改方法,使用对象
-
-        //TODO：编写药品信息删除方法
 
         #endregion
 
@@ -289,9 +289,10 @@ namespace DrugMgmtSys
         /// <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)
         {
-            
+            InfoMgmtForm infoForm = new InfoMgmtForm();
+            infoForm.ShowDialog();
+            BindAll_K();
         }
-
 
         #endregion
 
@@ -304,7 +305,16 @@ namespace DrugMgmtSys
         /// <param name="e"></param>
         private void button4_Click(object sender, EventArgs e)
         {
-            //TODO：修改药品信息的方法调用
+            //创建drug,获取当前信息
+            Drug drug = new Drug(KEY);
+            
+            InfoMgmtForm infoForm = new InfoMgmtForm(KEY);
+            //为组件赋值：当前值
+            infoForm.setValue(drug.Name, drug.Unit, drug.Spec, drug.Origin, drug.Lot_num, drug.Reserve, drug.W_price, drug.Reserve);
+            infoForm.asChange();//更改按钮
+            infoForm.ShowDialog();
+            BindAll_K();
+
         }
 
         /// <summary>
@@ -314,12 +324,44 @@ namespace DrugMgmtSys
         /// <param name="e"></param>
         private void button3_Click(object sender, EventArgs e)
         {
-            //TODO：删除药品信息方法的调用
+            string caption = "温馨提示";
+            string message = "是否删除该条数据？";
+            MessageBoxButtons btn = MessageBoxButtons.YesNo;
+            DialogResult result = new DialogResult();
+            result = MessageBox.Show(message, caption, btn);
+            if (result == System.Windows.Forms.DialogResult.Yes)
+            {
+                string sql = "delete from tb_drug where d_id=" + KEY;
+                if (MySqlTools.ExecuteNonQuery(sql) > 0)
+                {
+                    MessageBox.Show("成功删除该条记录！", "温馨提示");
+                    BindAll_K();
+                }
+            }
         }
 
-        #endregion
-        
 
+        #endregion
+
+        /// <summary>
+        /// 点击单元格时，获取当前行索引
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void dataGridView_K_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            //TODO:BUG
+
+            //if ()
+            //{
+            //    return;
+            //}
+            this.dataGridView_K.Rows[e.RowIndex].Selected = true;//是否选中当前行
+            int index = e.RowIndex;
+            //this.dataGridView_K.CurrentCell = this.dataGridView_K.Rows[e.RowIndex].Cells[0];//每次选中行都刷新到datagridview中的活动单元格
+            //获取当前行对应的“编号”列的值（主键） 
+            KEY = int.Parse(dataGridView_X.Rows[index].Cells["编号"].Value.ToString());
+        }
     }
 }
 

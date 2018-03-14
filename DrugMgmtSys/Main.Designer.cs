@@ -68,11 +68,6 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.button7 = new System.Windows.Forms.Button();
             this.dataGridView_K = new System.Windows.Forms.DataGridView();
-            this.button6 = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox_select_K = new System.Windows.Forms.TextBox();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -83,6 +78,11 @@
             this.批发价 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.利润 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button6 = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBox_select_K = new System.Windows.Forms.TextBox();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_X)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.tabControl_main.SuspendLayout();
@@ -400,63 +400,15 @@
             dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView_K.DefaultCellStyle = dataGridViewCellStyle19;
             this.dataGridView_K.Location = new System.Drawing.Point(3, 63);
+            this.dataGridView_K.MultiSelect = false;
             this.dataGridView_K.Name = "dataGridView_K";
             this.dataGridView_K.ReadOnly = true;
             this.dataGridView_K.RowTemplate.Height = 23;
+            this.dataGridView_K.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView_K.Size = new System.Drawing.Size(963, 442);
             this.dataGridView_K.TabIndex = 10;
             this.dataGridView_K.VirtualMode = true;
-            // 
-            // button6
-            // 
-            this.button6.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button6.Font = new System.Drawing.Font("宋体", 12F);
-            this.button6.Location = new System.Drawing.Point(354, 18);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(70, 25);
-            this.button6.TabIndex = 9;
-            this.button6.Text = "查找";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
-            // 
-            // label3
-            // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label3.Location = new System.Drawing.Point(6, 23);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(128, 16);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "请输入药品名称:";
-            // 
-            // textBox_select_K
-            // 
-            this.textBox_select_K.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox_select_K.Font = new System.Drawing.Font("宋体", 12F);
-            this.textBox_select_K.Location = new System.Drawing.Point(144, 18);
-            this.textBox_select_K.Name = "textBox_select_K";
-            this.textBox_select_K.Size = new System.Drawing.Size(204, 26);
-            this.textBox_select_K.TabIndex = 7;
-            this.textBox_select_K.MouseClick += new System.Windows.Forms.MouseEventHandler(this.textBox_select_K_MouseClick);
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(972, 511);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "药品计量单位管理（D）";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // tabPage4
-            // 
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(972, 511);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "使用帮助（H）";
-            this.tabPage4.UseVisualStyleBackColor = true;
+            this.dataGridView_K.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView_K_CellMouseClick);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -472,7 +424,7 @@
             this.dataGridViewTextBoxColumn2.DataPropertyName = "d_name";
             dataGridViewCellStyle10.Font = new System.Drawing.Font("宋体", 14F);
             this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle10;
-            this.dataGridViewTextBoxColumn2.FillWeight = 3.629086F;
+            this.dataGridViewTextBoxColumn2.FillWeight = 0.2966509F;
             this.dataGridViewTextBoxColumn2.HeaderText = "药品名称";
             this.dataGridViewTextBoxColumn2.MinimumWidth = 130;
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
@@ -509,9 +461,9 @@
             this.产地.DataPropertyName = "d_origin";
             dataGridViewCellStyle13.Font = new System.Drawing.Font("宋体", 14F);
             this.产地.DefaultCellStyle = dataGridViewCellStyle13;
-            this.产地.FillWeight = 0.2966509F;
+            this.产地.FillWeight = 3.629086F;
             this.产地.HeaderText = "产地";
-            this.产地.MinimumWidth = 190;
+            this.产地.MinimumWidth = 220;
             this.产地.Name = "产地";
             this.产地.ReadOnly = true;
             // 
@@ -572,10 +524,61 @@
             this.利润.DefaultCellStyle = dataGridViewCellStyle18;
             this.利润.FillWeight = 348.5915F;
             this.利润.HeaderText = "利润";
-            this.利润.MinimumWidth = 55;
+            this.利润.MinimumWidth = 60;
             this.利润.Name = "利润";
             this.利润.ReadOnly = true;
-            this.利润.Width = 55;
+            this.利润.Width = 60;
+            // 
+            // button6
+            // 
+            this.button6.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button6.Font = new System.Drawing.Font("宋体", 12F);
+            this.button6.Location = new System.Drawing.Point(354, 18);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(70, 25);
+            this.button6.TabIndex = 9;
+            this.button6.Text = "查找";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label3.Location = new System.Drawing.Point(6, 23);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(128, 16);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "请输入药品名称:";
+            // 
+            // textBox_select_K
+            // 
+            this.textBox_select_K.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.textBox_select_K.Font = new System.Drawing.Font("宋体", 12F);
+            this.textBox_select_K.Location = new System.Drawing.Point(144, 18);
+            this.textBox_select_K.Name = "textBox_select_K";
+            this.textBox_select_K.Size = new System.Drawing.Size(204, 26);
+            this.textBox_select_K.TabIndex = 7;
+            this.textBox_select_K.MouseClick += new System.Windows.Forms.MouseEventHandler(this.textBox_select_K_MouseClick);
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(972, 511);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "药品计量单位管理（D）";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Size = new System.Drawing.Size(972, 511);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "使用帮助（H）";
+            this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // Main
             // 

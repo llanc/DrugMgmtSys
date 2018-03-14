@@ -32,6 +32,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.tb_origin = new System.Windows.Forms.TextBox();
             this.cb_unit = new System.Windows.Forms.ComboBox();
             this.nud_r_price = new System.Windows.Forms.NumericUpDown();
@@ -49,7 +50,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
+            this.lb_progit = new System.Windows.Forms.Label();
             this.btn_add = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
@@ -99,6 +100,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.button2);
             this.groupBox2.Controls.Add(this.tb_origin);
             this.groupBox2.Controls.Add(this.cb_unit);
             this.groupBox2.Controls.Add(this.nud_r_price);
@@ -112,6 +114,17 @@
             this.groupBox2.Size = new System.Drawing.Size(271, 375);
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("幼圆", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button2.Location = new System.Drawing.Point(147, 63);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(118, 24);
+            this.button2.TabIndex = 10;
+            this.button2.Text = "添加新单位";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // tb_origin
             // 
@@ -134,18 +147,42 @@
             // 
             // nud_r_price
             // 
+            this.nud_r_price.DecimalPlaces = 2;
             this.nud_r_price.Font = new System.Drawing.Font("楷体", 14F);
+            this.nud_r_price.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            65536});
             this.nud_r_price.Location = new System.Drawing.Point(21, 337);
+            this.nud_r_price.Maximum = new decimal(new int[] {
+            999999,
+            0,
+            0,
+            0});
             this.nud_r_price.Name = "nud_r_price";
             this.nud_r_price.Size = new System.Drawing.Size(120, 29);
             this.nud_r_price.TabIndex = 7;
             this.nud_r_price.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nud_r_price.UpDownAlign = System.Windows.Forms.LeftRightAlignment.Left;
+            this.nud_r_price.ValueChanged += new System.EventHandler(this.nud_r_price_ValueChanged);
+            this.nud_r_price.KeyUp += new System.Windows.Forms.KeyEventHandler(this.nud_r_price_KeyUp);
             // 
             // nud_w_price
             // 
+            this.nud_w_price.DecimalPlaces = 2;
             this.nud_w_price.Font = new System.Drawing.Font("楷体", 14F);
+            this.nud_w_price.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            65536});
             this.nud_w_price.Location = new System.Drawing.Point(21, 293);
+            this.nud_w_price.Maximum = new decimal(new int[] {
+            999999,
+            0,
+            0,
+            0});
             this.nud_w_price.Name = "nud_w_price";
             this.nud_w_price.Size = new System.Drawing.Size(120, 29);
             this.nud_w_price.TabIndex = 6;
@@ -156,6 +193,11 @@
             // 
             this.nud_reserve.Font = new System.Drawing.Font("楷体", 14F);
             this.nud_reserve.Location = new System.Drawing.Point(21, 246);
+            this.nud_reserve.Maximum = new decimal(new int[] {
+            999999,
+            0,
+            0,
+            0});
             this.nud_reserve.Name = "nud_reserve";
             this.nud_reserve.Size = new System.Drawing.Size(120, 29);
             this.nud_reserve.TabIndex = 5;
@@ -285,16 +327,16 @@
             this.label9.TabIndex = 7;
             this.label9.Text = "利润：";
             // 
-            // label11
+            // lb_progit
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("华文楷体", 14F, System.Drawing.FontStyle.Bold);
-            this.label11.ForeColor = System.Drawing.Color.Lime;
-            this.label11.Location = new System.Drawing.Point(213, 446);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(40, 21);
-            this.label11.TabIndex = 8;
-            this.label11.Text = "0元";
+            this.lb_progit.AutoSize = true;
+            this.lb_progit.Font = new System.Drawing.Font("华文楷体", 14F, System.Drawing.FontStyle.Bold);
+            this.lb_progit.ForeColor = System.Drawing.Color.Lime;
+            this.lb_progit.Location = new System.Drawing.Point(213, 446);
+            this.lb_progit.Name = "lb_progit";
+            this.lb_progit.Size = new System.Drawing.Size(40, 21);
+            this.lb_progit.TabIndex = 8;
+            this.lb_progit.Text = "0元";
             // 
             // btn_add
             // 
@@ -325,7 +367,7 @@
             this.ClientSize = new System.Drawing.Size(404, 541);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btn_add);
-            this.Controls.Add(this.label11);
+            this.Controls.Add(this.lb_progit);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label2);
@@ -337,8 +379,7 @@
             this.Name = "InfoMgmtForm";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "药品信息添加";
-            this.TopMost = true;
+            this.Text = "药品信息添加OR修改";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -365,7 +406,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label lb_progit;
         private System.Windows.Forms.Button btn_add;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox groupBox2;
@@ -377,5 +418,6 @@
         private System.Windows.Forms.NumericUpDown nud_w_price;
         private System.Windows.Forms.ComboBox cb_unit;
         private System.Windows.Forms.TextBox tb_origin;
+        private System.Windows.Forms.Button button2;
     }
 }
