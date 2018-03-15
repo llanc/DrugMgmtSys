@@ -101,16 +101,6 @@ namespace DrugMgmtSys
             Close();
         }
 
-        /// <summary>
-        /// 添加新单位
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void button2_Click(object sender, EventArgs e)
-        {
-            //TODO:调用添加单位方法
-        }
-
         #region 计算利润
         private void nud_r_price_ValueChanged(object sender, EventArgs e)
         {
@@ -118,6 +108,15 @@ namespace DrugMgmtSys
         }
 
         private void nud_r_price_KeyUp(object sender, KeyEventArgs e)
+        {
+            lb_progit.Text = (nud_r_price.Value - nud_w_price.Value) + "元";
+        }
+        private void nud_w_price_KeyUp(object sender, KeyEventArgs e)
+        {
+            lb_progit.Text = (nud_r_price.Value - nud_w_price.Value) + "元";
+        }
+
+        private void nud_w_price_ValueChanged(object sender, EventArgs e)
         {
             lb_progit.Text = (nud_r_price.Value - nud_w_price.Value) + "元";
         }
@@ -153,5 +152,6 @@ namespace DrugMgmtSys
             nud_w_price.Value = (decimal)w_price;
             nud_r_price.Value = (decimal)r_price;
         }
+
     }
 }

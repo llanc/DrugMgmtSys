@@ -32,7 +32,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
             this.tb_origin = new System.Windows.Forms.TextBox();
             this.cb_unit = new System.Windows.Forms.ComboBox();
             this.nud_r_price = new System.Windows.Forms.NumericUpDown();
@@ -53,6 +52,7 @@
             this.lb_progit = new System.Windows.Forms.Label();
             this.btn_add = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nud_r_price)).BeginInit();
@@ -100,7 +100,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.button2);
+            this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.tb_origin);
             this.groupBox2.Controls.Add(this.cb_unit);
             this.groupBox2.Controls.Add(this.nud_r_price);
@@ -115,17 +115,6 @@
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
             // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("幼圆", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button2.Location = new System.Drawing.Point(147, 63);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(118, 24);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "添加新单位";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // tb_origin
             // 
             this.tb_origin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -137,13 +126,13 @@
             // 
             // cb_unit
             // 
+            this.cb_unit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_unit.Font = new System.Drawing.Font("楷体", 12F);
             this.cb_unit.FormattingEnabled = true;
             this.cb_unit.Location = new System.Drawing.Point(20, 63);
             this.cb_unit.Name = "cb_unit";
             this.cb_unit.Size = new System.Drawing.Size(121, 24);
             this.cb_unit.TabIndex = 8;
-            this.cb_unit.Text = "请选择单位";
             // 
             // nud_r_price
             // 
@@ -188,6 +177,8 @@
             this.nud_w_price.TabIndex = 6;
             this.nud_w_price.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nud_w_price.UpDownAlign = System.Windows.Forms.LeftRightAlignment.Left;
+            this.nud_w_price.ValueChanged += new System.EventHandler(this.nud_w_price_ValueChanged);
+            this.nud_w_price.KeyUp += new System.Windows.Forms.KeyEventHandler(this.nud_w_price_KeyUp);
             // 
             // nud_reserve
             // 
@@ -219,7 +210,7 @@
             this.tb_spec.Font = new System.Drawing.Font("宋体", 12F);
             this.tb_spec.Location = new System.Drawing.Point(20, 106);
             this.tb_spec.Name = "tb_spec";
-            this.tb_spec.Size = new System.Drawing.Size(206, 26);
+            this.tb_spec.Size = new System.Drawing.Size(245, 26);
             this.tb_spec.TabIndex = 2;
             // 
             // tb_name
@@ -246,6 +237,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("华文楷体", 14F, System.Drawing.FontStyle.Bold);
+            this.label8.ForeColor = System.Drawing.Color.Green;
             this.label8.Location = new System.Drawing.Point(46, 212);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(70, 21);
@@ -279,7 +271,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("华文楷体", 14F, System.Drawing.FontStyle.Bold);
             this.label5.ForeColor = System.Drawing.Color.Red;
-            this.label5.Location = new System.Drawing.Point(46, 72);
+            this.label5.Location = new System.Drawing.Point(46, 75);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(70, 21);
             this.label5.TabIndex = 3;
@@ -290,6 +282,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("华文楷体", 14F, System.Drawing.FontStyle.Bold);
+            this.label4.ForeColor = System.Drawing.Color.Green;
             this.label4.Location = new System.Drawing.Point(46, 117);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(70, 21);
@@ -300,6 +293,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("华文楷体", 14F, System.Drawing.FontStyle.Bold);
+            this.label3.ForeColor = System.Drawing.Color.Green;
             this.label3.Location = new System.Drawing.Point(46, 165);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(70, 21);
@@ -360,6 +354,18 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("华文楷体", 14F, System.Drawing.FontStyle.Bold);
+            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.label11.Location = new System.Drawing.Point(155, 64);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(110, 21);
+            this.label11.TabIndex = 10;
+            this.label11.Text = "请选择单位";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // InfoMgmtForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -418,6 +424,6 @@
         private System.Windows.Forms.NumericUpDown nud_w_price;
         private System.Windows.Forms.ComboBox cb_unit;
         private System.Windows.Forms.TextBox tb_origin;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label11;
     }
 }

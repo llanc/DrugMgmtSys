@@ -22,6 +22,7 @@ namespace DrugMgmtSys
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            ForbidSortColumn(dataGridView_K);
             //显示
             BindAll_X();
         }
@@ -48,6 +49,56 @@ namespace DrugMgmtSys
         private void button6_Click(object sender, EventArgs e)
         {
             BindByTrim_K();
+        }
+
+        #endregion
+
+        #region 显示全部按钮
+
+        /// <summary>
+        /// 销售页面显示全部按钮
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button5_Click(object sender, EventArgs e)
+        {
+            BindAll_X();
+        }
+
+        /// <summary>
+        /// 库存页面显示全部按钮
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button7_Click(object sender, EventArgs e)
+        {
+            BindAll_K();
+        }
+
+        #endregion
+
+        #region 出售按钮
+
+        private void dataGridView_X_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex != 0 || e.RowIndex == -1)
+            {
+                return;
+            }
+
+            double num = getIntputNum();
+
+            bool b = false;
+
+            //获取当前行的索引
+            int index = dataGridView_X.CurrentCell.RowIndex;
+            //获取当前行对应的“编号”列的值（主键） 
+            int key = Int32.Parse(dataGridView_X.Rows[index].Cells["编号"].Value.ToString());
+
+            //更新库存
+            updateReserve(num, key, false);
+
+            BindAll_X();
         }
 
         #endregion
@@ -121,30 +172,6 @@ namespace DrugMgmtSys
 
         #endregion
 
-        #region 显示全部按钮
-
-        /// <summary>
-        /// 销售页面显示全部按钮
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void button5_Click(object sender, EventArgs e)
-        {
-            BindAll_X();
-        }
-
-        /// <summary>
-        /// 库存页面显示全部按钮
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void button7_Click(object sender, EventArgs e)
-        {
-            BindAll_K();
-        }
-
-        #endregion
-
         #region 清空文本框
 
         private void textBox_select_X_MouseClick(object sender, MouseEventArgs e)
@@ -154,31 +181,6 @@ namespace DrugMgmtSys
         private void textBox_select_K_MouseClick(object sender, MouseEventArgs e)
         {
             textBox_select_K.Text = "";
-        }
-
-        #endregion
-
-        #region 出售按钮
-        private void dataGridView_X_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.ColumnIndex!=0||e.RowIndex==-1)
-            {
-                return;
-            }
-
-            double num=getIntputNum();
-
-            bool b = false;
-
-            //获取当前行的索引
-            int index=dataGridView_X.CurrentCell.RowIndex;
-            //获取当前行对应的“编号”列的值（主键） 
-            int key=Int32.Parse(dataGridView_X.Rows[index].Cells["编号"].Value.ToString());
-
-            //更新库存
-            updateReserve(num, key, false);
-
-            BindAll_X();
         }
 
         #endregion
@@ -197,7 +199,8 @@ namespace DrugMgmtSys
 
         #endregion
 
-        #region 数据更新
+        #region 数据操作
+
         /// <summary>
         /// 更新库存方法
         /// </summary>
@@ -248,54 +251,6 @@ namespace DrugMgmtSys
             }
         }
 
-        #endregion
-
-        #region 选项卡切换处理
-        /// <summary>
-        /// 更改选项卡后触发的事件
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void tabControl_main_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            String i = tabControl_main.SelectedTab.Text;
-            switch (i)
-            {
-                case "药品销售（X）":
-                    BindAll_X();
-                    break;
-                case "药品库存信息管理（K）":
-                    BindAll_K();
-                    break;
-                case "药品计量单位管理（D）":
-
-                    break;
-                case "使用帮助（H）":
-
-                    break;
-            }
-        }
-
-
-
-        #endregion
-
-        #region 添加数据
-
-        /// <summary>
-        /// 添加药品
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void button2_Click(object sender, EventArgs e)
-        {
-            InfoMgmtForm infoForm = new InfoMgmtForm();
-            infoForm.ShowDialog();
-            BindAll_K();
-        }
-
-        #endregion
-
         #region 库存页面删除、修改按钮
 
         /// <summary>
@@ -305,8 +260,15 @@ namespace DrugMgmtSys
         /// <param name="e"></param>
         private void button4_Click(object sender, EventArgs e)
         {
+
+            if (KEY==0)
+            {
+                MessageBox.Show("请先选中一行数据！", "温馨提示");
+                return;
+            }
+
             //创建drug,获取当前信息
-            Drug drug = new Drug(KEY);
+             Drug drug = new Drug(KEY);
             
             InfoMgmtForm infoForm = new InfoMgmtForm(KEY);
             //为组件赋值：当前值
@@ -340,8 +302,56 @@ namespace DrugMgmtSys
             }
         }
 
+        #endregion
+        
+        #region 添加数据
+
+        /// <summary>
+        /// 添加药品
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button2_Click(object sender, EventArgs e)
+        {
+            
+            InfoMgmtForm infoForm = new InfoMgmtForm();
+            infoForm.ShowDialog();
+            //BindAll_K();
+            tabControl_main.SelectedIndex = 0;
+            tabControl_main.SelectedIndex = 1;
+        }
 
         #endregion
+
+        #endregion
+
+        #region 选项卡切换处理
+
+        /// <summary>
+        /// 更改选项卡后触发的事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void tabControl_main_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            String i = tabControl_main.SelectedTab.Text;
+            switch (i)
+            {
+                case "药品销售":
+                    BindAll_X();
+                    break;
+                case "药品库存信息管理":
+                    BindAll_K();
+                    break;
+                case "使用帮助":
+
+                    break;
+            }
+        }
+
+        #endregion
+
+        #region 处理操作
 
         /// <summary>
         /// 点击单元格时，获取当前行索引
@@ -350,17 +360,34 @@ namespace DrugMgmtSys
         /// <param name="e"></param>
         private void dataGridView_K_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            //TODO:BUG
-
-            //if ()
-            //{
-            //    return;
-            //}
+            if (e.RowIndex==-1)
+            {
+                return;
+            }
             this.dataGridView_K.Rows[e.RowIndex].Selected = true;//是否选中当前行
             int index = e.RowIndex;
-            //this.dataGridView_K.CurrentCell = this.dataGridView_K.Rows[e.RowIndex].Cells[0];//每次选中行都刷新到datagridview中的活动单元格
             //获取当前行对应的“编号”列的值（主键） 
-            KEY = int.Parse(dataGridView_X.Rows[index].Cells["编号"].Value.ToString());
+            DataTable dt =(DataTable)dataGridView_K.DataSource;
+            KEY = (int)dt.Rows[index][0];
+        }
+        
+        /// <summary>
+        /// 禁止DataGrideView排序 加载时调用
+        /// </summary>
+        /// <param name="dgv"></param>
+        public static void ForbidSortColumn(DataGridView dgv)
+        {
+            for (int i = 0; i < dgv.Columns.Count; i++)
+            {
+                dgv.Columns[i].SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
+        }
+
+        #endregion
+
+        private void label14_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://www.llanc.cn/");
         }
     }
 }
