@@ -23,3 +23,7 @@ D:\C#项目\DrugMgmtSys\DrugMgmtSys\obj\Debug\DrugMgmtSys.Main.resources
 D:\C#项目\DrugMgmtSys\DrugMgmtSys\obj\Debug\DrugMgmtSys.Properties.Resources.resources
 D:\C#项目\DrugMgmtSys\DrugMgmtSys\obj\Debug\DrugMgmtSys.csproj.GenerateResource.Cache
 D:\C#项目\DrugMgmtSys\DrugMgmtSys\obj\Debug\DrugMgmtSys.InfoMgmtForm.resources
+D:\C#项目\DrugMgmtSys\DrugMgmtSys\bin\Debug\DrugMgmtSys.exe.manifest
+D:\C#项目\DrugMgmtSys\DrugMgmtSys\bin\Debug\DrugMgmtSys.application
+D:\C#项目\DrugMgmtSys\DrugMgmtSys\obj\Debug\DrugMgmtSys.exe.manifest
+D:\C#项目\DrugMgmtSys\DrugMgmtSys\obj\Debug\DrugMgmtSys.application
