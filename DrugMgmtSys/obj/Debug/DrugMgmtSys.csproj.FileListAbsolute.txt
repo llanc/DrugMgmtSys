@@ -27,3 +27,4 @@ D:\C#项目\DrugMgmtSys\DrugMgmtSys\bin\Debug\DrugMgmtSys.exe.manifest
 D:\C#项目\DrugMgmtSys\DrugMgmtSys\bin\Debug\DrugMgmtSys.application
 D:\C#项目\DrugMgmtSys\DrugMgmtSys\obj\Debug\DrugMgmtSys.exe.manifest
 D:\C#项目\DrugMgmtSys\DrugMgmtSys\obj\Debug\DrugMgmtSys.application
+D:\C#项目\DrugMgmtSys\DrugMgmtSys\obj\Debug\DrugMgmtSys.ShowOrder.resources

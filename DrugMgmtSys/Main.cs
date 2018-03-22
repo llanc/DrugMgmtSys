@@ -14,6 +14,21 @@ namespace DrugMgmtSys
     public partial class Main : Form
     {
         private int KEY;
+        private bool canOrder=false;
+        Order order = null;
+
+        public bool CanOrder
+        {
+            get
+            {
+                return canOrder;
+            }
+
+            set
+            {
+                canOrder = value;
+            }
+        }
 
         public Main()
         {
@@ -85,20 +100,31 @@ namespace DrugMgmtSys
             {
                 return;
             }
+            if (CanOrder)
+            {
+                double num = getIntputNum();
 
-            double num = getIntputNum();
 
-            bool b = false;
+                //获取当前行的索引
+                int index = dataGridView_X.CurrentCell.RowIndex;
+                //获取当前行对应的“编号”列的值（主键） 
+                int key = Int32.Parse(dataGridView_X.Rows[index].Cells["编号"].Value.ToString());
 
-            //获取当前行的索引
-            int index = dataGridView_X.CurrentCell.RowIndex;
-            //获取当前行对应的“编号”列的值（主键） 
-            int key = Int32.Parse(dataGridView_X.Rows[index].Cells["编号"].Value.ToString());
+                //更新库存
+                updateReserve(num, key);
+                Drug drug = new Drug(key);
 
-            //更新库存
-            updateReserve(num, key, false);
+                //向订单添加
+                order.add(drug);
+                order.setNum(num);
+                
+                BindAll_X();
+            }
+            else
+            {
+                MessageBox.Show("请先点击上方“开处药方”按钮，建立新的药方再行出售！","温馨提示");
+            }
 
-            BindAll_X();
         }
 
         #endregion
@@ -134,6 +160,30 @@ namespace DrugMgmtSys
                 dt.Rows[i]["tb_progit"] = Convert.ToDouble(dt.Rows[i][8]) - Convert.ToDouble(dt.Rows[i][7]);
             }
             dataGridView_K.DataSource = dt;
+        }
+
+        /// <summary>
+        /// 销售记录查询
+        /// </summary>
+        protected void BindAndShow()
+        {
+
+            DateTime dt = dateTimePicker1.Value;
+            string time=dt.ToLongDateString().ToString();
+            string sql =string .Format("SELECT o_id,o_name,o_num,o_r_price,o_money FROM tb_order where o_time='{0}'", time);
+            DataSet ds = MySqlTools.GetDataSet(sql);
+            DataTable dataTable = ds.Tables[0];
+            dataGridView_M.DataSource=dataTable;
+            //求和
+            double sum_m = 0;
+            double sum_r = 0;
+            for (int i = 0; i < dataGridView_M.Rows.Count; i++)
+            {
+                sum_m += Convert.ToDouble(dataGridView_M.Rows[i].Cells["利润"].Value);
+                sum_r += Convert.ToDouble(dataGridView_M.Rows[i].Cells["售价"].Value);
+            }
+            lb_r.Text = sum_r.ToString()+"元";
+            lb_m.Text = sum_m.ToString() + "元";
         }
 
         #endregion
@@ -199,37 +249,21 @@ namespace DrugMgmtSys
 
         #endregion
 
-        #region 数据操作
-
         /// <summary>
         /// 更新库存方法
         /// </summary>
         /// <param name="num">用户输入</param>
         /// <param name="key">主键</param>
         /// <param name="b">true为增加，false为减少</param>
-        private void updateReserve(double num,int key,bool b)
+        private void updateReserve(double num,int key)
         {
             if (num==0)
             {
                 return;
             }
             string sql_SelectReserve = "SELECT d_reserve FROM tb_drug WHERE d_id=" + key;
-            //获取库存
             double reserve = (double)MySqlTools.ExecuteScalar(sql_SelectReserve);
-            if (b)
-            {
-                string sql_updateReserve = string.Format("UPDATE tb_drug SET d_reserve={0} WHERE d_id={1}", reserve + num, key);
-                if (MySqlTools.ExecuteNonQuery(sql_updateReserve) ==1 )
-                {
-                    MessageBox.Show("入库成功！","温馨提示");
-                }
-                else
-                {
-                    MessageBox.Show("入库失败！", "温馨提示");
-                }
-            }
-            else
-            {
+
                 if (reserve - num<0)
                 {
                     MessageBox.Show("  该药品剩余库存为:" + reserve + "\n  库存不足,请尽快补货！", "温馨提示");
@@ -237,18 +271,18 @@ namespace DrugMgmtSys
                 else
                 {
                     string sql_updateReserve = string.Format("UPDATE tb_drug SET d_reserve={0} WHERE d_id={1}", reserve - num, key);
-                    string sql_select_r_price = "SELECT d_r_price FROM tb_drug WHERE d_id=" + key;
-                    double money =num*(double)MySqlTools.ExecuteScalar(sql_select_r_price);
+                    // sql_select_r_price = "SELECT d_r_price FROM tb_drug WHERE d_id=" + key;
+                    //double money =num*(double)MySqlTools.ExecuteScalar(sql_select_r_price);
                     if (MySqlTools.ExecuteNonQuery(sql_updateReserve) == 1)
                     {
-                        MessageBox.Show("应收金额："+ money + "元。", "出库成功！");
+                        MessageBox.Show("出库成功！", "温馨提示");
                     }
                     else
                     {
                         MessageBox.Show("出库失败！", "温馨提示");
                     }
                 }
-            }
+           //}
         }
 
         #region 库存页面删除、修改按钮
@@ -272,7 +306,7 @@ namespace DrugMgmtSys
             
             InfoMgmtForm infoForm = new InfoMgmtForm(KEY);
             //为组件赋值：当前值
-            infoForm.setValue(drug.Name, drug.Unit, drug.Spec, drug.Origin, drug.Lot_num, drug.Reserve, drug.W_price, drug.Reserve);
+            infoForm.setValue(drug.Name, drug.Unit, drug.Spec, drug.Origin, drug.Lot_num, drug.Reserve, drug.W_price, drug.R_price);
             infoForm.asChange();//更改按钮
             infoForm.ShowDialog();
             BindAll_K();
@@ -323,8 +357,6 @@ namespace DrugMgmtSys
 
         #endregion
 
-        #endregion
-
         #region 选项卡切换处理
 
         /// <summary>
@@ -334,7 +366,7 @@ namespace DrugMgmtSys
         /// <param name="e"></param>
         private void tabControl_main_SelectedIndexChanged(object sender, EventArgs e)
         {
-            String i = tabControl_main.SelectedTab.Text;
+            string i = tabControl_main.SelectedTab.Text;
             switch (i)
             {
                 case "药品销售":
@@ -343,8 +375,8 @@ namespace DrugMgmtSys
                 case "药品库存信息管理":
                     BindAll_K();
                     break;
-                case "使用帮助":
-
+                case "销售记录":
+                    BindAndShow();
                     break;
             }
         }
@@ -383,12 +415,97 @@ namespace DrugMgmtSys
             }
         }
 
+        /// <summary>
+        /// 检索时间改变
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            BindAndShow();
+        }
+
         #endregion
 
+
+        /// <summary>
+        /// 版权方网站
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void label14_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("https://www.llanc.cn/");
         }
+
+        /// <summary>
+        /// 开处药方
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button8_Click(object sender, EventArgs e)
+        {
+            if (button8.Text=="开处药方")
+            {
+                button8.Text = "结算";
+                button8.ForeColor = Color.Red;
+                CanOrder = true;//可以出售
+                order = new Order();//新建订单
+                MessageBox.Show("创建药方成功，请点击“出售”按钮添加药品", "温馨提示");
+            }
+            else if (button8.Text == "结算")
+            {
+                button8.Text = "开处药方";
+                button8.ForeColor = Color.Green;
+                CanOrder = false;//不可出售
+                ShowOrder showOrderForm = new ShowOrder(order.getMessage());
+                showOrderForm.ShowDialog();
+            }
+        }
+
+        #region 登录处理
+
+        /// <summary>
+        /// 登录按钮
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_login_Click(object sender, EventArgs e)
+        {
+            string pwd = tb_pwd.Text;
+            string sql = string.Format("SELECT * FROM tb_pwd WHERE pwd='{0}'", pwd);
+            try
+            {
+                if ((int)MySqlTools.ExecuteScalar(sql) == 1)
+                {
+                    panl_Login.Visible = false;
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("您的密码输入有误，请重新输入!", "温馨提示");
+            }
+        }
+        /// <summary>
+        /// 修改密码按钮
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void bun_ch_Click(object sender, EventArgs e)
+        {
+            string sql = string.Format("UPDATE tb_pwd SET pwd='{0}' where id=1",tb_pwdCh.Text);
+            
+            if ((int)MySqlTools.ExecuteNonQuery(sql)==1)
+            {
+                MessageBox.Show("密码更改成功，请牢记！\n" + tb_pwdCh.Text, "温馨提示");
+            }
+            else
+            {
+                MessageBox.Show("密码更改失败！", "温馨提示");
+            }
+        }
+
+        #endregion
     }
 }
 

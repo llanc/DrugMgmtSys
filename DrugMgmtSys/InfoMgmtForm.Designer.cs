@@ -251,11 +251,11 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("华文楷体", 14F, System.Drawing.FontStyle.Bold);
             this.label8.ForeColor = System.Drawing.Color.Green;
-            this.label8.Location = new System.Drawing.Point(46, 212);
+            this.label8.Location = new System.Drawing.Point(26, 212);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(70, 21);
+            this.label8.Size = new System.Drawing.Size(90, 21);
             this.label8.TabIndex = 6;
-            this.label8.Text = "批号：";
+            this.label8.Text = "有效期：";
             // 
             // label7
             // 
