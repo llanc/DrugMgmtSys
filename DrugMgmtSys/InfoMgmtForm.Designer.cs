@@ -33,11 +33,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.tb_r_price = new System.Windows.Forms.TextBox();
+            this.tb_w_price = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.tb_origin = new System.Windows.Forms.TextBox();
             this.cb_unit = new System.Windows.Forms.ComboBox();
-            this.nud_r_price = new System.Windows.Forms.NumericUpDown();
-            this.nud_w_price = new System.Windows.Forms.NumericUpDown();
             this.nud_reserve = new System.Windows.Forms.NumericUpDown();
             this.tb_lot_num = new System.Windows.Forms.TextBox();
             this.tb_spec = new System.Windows.Forms.TextBox();
@@ -56,8 +56,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nud_r_price)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nud_w_price)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_reserve)).BeginInit();
             this.SuspendLayout();
             // 
@@ -101,11 +99,11 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.tb_r_price);
+            this.groupBox2.Controls.Add(this.tb_w_price);
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.tb_origin);
             this.groupBox2.Controls.Add(this.cb_unit);
-            this.groupBox2.Controls.Add(this.nud_r_price);
-            this.groupBox2.Controls.Add(this.nud_w_price);
             this.groupBox2.Controls.Add(this.nud_reserve);
             this.groupBox2.Controls.Add(this.tb_lot_num);
             this.groupBox2.Controls.Add(this.tb_spec);
@@ -115,6 +113,32 @@
             this.groupBox2.Size = new System.Drawing.Size(271, 375);
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
+            // 
+            // tb_r_price
+            // 
+            this.tb_r_price.Font = new System.Drawing.Font("楷体", 14F);
+            this.tb_r_price.Location = new System.Drawing.Point(21, 331);
+            this.tb_r_price.Name = "tb_r_price";
+            this.tb_r_price.Size = new System.Drawing.Size(120, 29);
+            this.tb_r_price.TabIndex = 12;
+            this.tb_r_price.Text = "0";
+            this.tb_r_price.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tb_r_price.MouseClick += new System.Windows.Forms.MouseEventHandler(this.tb_r_price_MouseClick);
+            this.tb_r_price.TextChanged += new System.EventHandler(this.tb_r_price_TextChanged);
+            this.tb_r_price.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_r_price_KeyPress);
+            // 
+            // tb_w_price
+            // 
+            this.tb_w_price.Font = new System.Drawing.Font("楷体", 14F);
+            this.tb_w_price.Location = new System.Drawing.Point(20, 292);
+            this.tb_w_price.Name = "tb_w_price";
+            this.tb_w_price.Size = new System.Drawing.Size(121, 29);
+            this.tb_w_price.TabIndex = 11;
+            this.tb_w_price.Text = "0";
+            this.tb_w_price.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tb_w_price.MouseClick += new System.Windows.Forms.MouseEventHandler(this.tb_w_price_MouseClick);
+            this.tb_w_price.TextChanged += new System.EventHandler(this.tb_w_price_TextChanged);
+            this.tb_w_price.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_w_price_KeyPress);
             // 
             // label11
             // 
@@ -146,52 +170,6 @@
             this.cb_unit.Name = "cb_unit";
             this.cb_unit.Size = new System.Drawing.Size(121, 24);
             this.cb_unit.TabIndex = 8;
-            // 
-            // nud_r_price
-            // 
-            this.nud_r_price.DecimalPlaces = 2;
-            this.nud_r_price.Font = new System.Drawing.Font("楷体", 14F);
-            this.nud_r_price.Increment = new decimal(new int[] {
-            5,
-            0,
-            0,
-            65536});
-            this.nud_r_price.Location = new System.Drawing.Point(21, 337);
-            this.nud_r_price.Maximum = new decimal(new int[] {
-            999999,
-            0,
-            0,
-            0});
-            this.nud_r_price.Name = "nud_r_price";
-            this.nud_r_price.Size = new System.Drawing.Size(120, 29);
-            this.nud_r_price.TabIndex = 7;
-            this.nud_r_price.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.nud_r_price.UpDownAlign = System.Windows.Forms.LeftRightAlignment.Left;
-            this.nud_r_price.ValueChanged += new System.EventHandler(this.nud_r_price_ValueChanged);
-            this.nud_r_price.KeyUp += new System.Windows.Forms.KeyEventHandler(this.nud_r_price_KeyUp);
-            // 
-            // nud_w_price
-            // 
-            this.nud_w_price.DecimalPlaces = 2;
-            this.nud_w_price.Font = new System.Drawing.Font("楷体", 14F);
-            this.nud_w_price.Increment = new decimal(new int[] {
-            5,
-            0,
-            0,
-            65536});
-            this.nud_w_price.Location = new System.Drawing.Point(21, 293);
-            this.nud_w_price.Maximum = new decimal(new int[] {
-            999999,
-            0,
-            0,
-            0});
-            this.nud_w_price.Name = "nud_w_price";
-            this.nud_w_price.Size = new System.Drawing.Size(120, 29);
-            this.nud_w_price.TabIndex = 6;
-            this.nud_w_price.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.nud_w_price.UpDownAlign = System.Windows.Forms.LeftRightAlignment.Left;
-            this.nud_w_price.ValueChanged += new System.EventHandler(this.nud_w_price_ValueChanged);
-            this.nud_w_price.KeyUp += new System.Windows.Forms.KeyEventHandler(this.nud_w_price_KeyUp);
             // 
             // nud_reserve
             // 
@@ -392,8 +370,6 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nud_r_price)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nud_w_price)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_reserve)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -422,10 +398,10 @@
         private System.Windows.Forms.TextBox tb_lot_num;
         private System.Windows.Forms.TextBox tb_spec;
         private System.Windows.Forms.NumericUpDown nud_reserve;
-        private System.Windows.Forms.NumericUpDown nud_r_price;
-        private System.Windows.Forms.NumericUpDown nud_w_price;
         private System.Windows.Forms.ComboBox cb_unit;
         private System.Windows.Forms.TextBox tb_origin;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox tb_r_price;
+        private System.Windows.Forms.TextBox tb_w_price;
     }
 }

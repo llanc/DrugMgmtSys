@@ -58,8 +58,8 @@ namespace DrugMgmtSys
             tb_origin.Text = "";
             tb_lot_num.Text = "";
             nud_reserve.Value = 0;
-            nud_w_price.Value = 0;
-            nud_r_price.Value = 0;
+            tb_w_price.Text = "0";
+            tb_r_price.Text = "0";
         }
 
         /// <summary>
@@ -69,9 +69,8 @@ namespace DrugMgmtSys
         /// <param name="e"></param>
         private void btn_add_Click(object sender, EventArgs e)
         {
-
                 //创建药品信息类Drug的对象（使用带参构造器）
-                Drug drug = new Drug(key,tb_name.Text,(int)cb_unit.SelectedValue, tb_spec.Text, tb_origin.Text, tb_lot_num.Text, double.Parse(nud_reserve.Value.ToString()), double.Parse(nud_w_price.Value.ToString()), double.Parse(nud_r_price.Value.ToString()));
+                Drug drug = new Drug(key,tb_name.Text,(int)cb_unit.SelectedValue, tb_spec.Text, tb_origin.Text, tb_lot_num.Text, double.Parse(nud_reserve.Value.ToString()), double.Parse(tb_w_price.Text), double.Parse(tb_r_price.Text.ToString()));
             if (btn_add.Text=="添加")
             {
                 int result=drug.addDrug();
@@ -94,7 +93,7 @@ namespace DrugMgmtSys
                 }
                 else
                 {
-                    MessageBox.Show("修改信息失败，请检查输入信息！", "温馨提示");
+                    MessageBox.Show("修改信息失败，请检查药品是否已经存在！", "温馨提示");
                 }
             }
 
@@ -102,24 +101,37 @@ namespace DrugMgmtSys
         }
 
         #region 计算利润
-        private void nud_r_price_ValueChanged(object sender, EventArgs e)
+
+        private void tb_w_price_TextChanged(object sender, EventArgs e)
         {
-            lb_progit.Text = (nud_r_price.Value - nud_w_price.Value) + "元";
+            try
+            {
+                double x= Convert.ToDouble(tb_r_price.Text);
+                double y = Convert.ToDouble(tb_w_price.Text);
+                lb_progit.Text = (x - y) + "元";
+            }
+            catch (Exception)
+            {
+                tb_w_price.Text = "0";
+                MessageBox.Show("请输入数字！", "温馨提示");
+            }
         }
 
-        private void nud_r_price_KeyUp(object sender, KeyEventArgs e)
+        private void tb_r_price_TextChanged(object sender, EventArgs e)
         {
-            lb_progit.Text = (nud_r_price.Value - nud_w_price.Value) + "元";
-        }
-        private void nud_w_price_KeyUp(object sender, KeyEventArgs e)
-        {
-            lb_progit.Text = (nud_r_price.Value - nud_w_price.Value) + "元";
+            try
+            {
+                lb_progit.Text = (Convert.ToDouble(tb_r_price.Text) - Convert.ToDouble(tb_w_price.Text)) + "元";
+
+            }
+            catch (Exception)
+            {
+
+                tb_r_price.Text = "0";
+                MessageBox.Show("请输入数字！", "温馨提示");
+            }
         }
 
-        private void nud_w_price_ValueChanged(object sender, EventArgs e)
-        {
-            lb_progit.Text = (nud_r_price.Value - nud_w_price.Value) + "元";
-        }
         #endregion
 
         /// <summary>
@@ -149,9 +161,58 @@ namespace DrugMgmtSys
             tb_origin.Text = origin;
             tb_lot_num.Text = lot_num;
             nud_reserve.Value = (decimal)reserve;
-            nud_w_price.Value = (decimal)w_price;
-            nud_r_price.Value = (decimal)r_price;
+            tb_w_price.Text = w_price.ToString();
+            tb_r_price.Text = r_price.ToString();
         }
+
+        #region 点击文本框全选
+        private void tb_w_price_MouseClick(object sender, MouseEventArgs e)
+        {
+            tb_w_price.SelectAll();
+        }
+        private void tb_r_price_MouseClick(object sender, MouseEventArgs e)
+        {
+            tb_r_price.SelectAll();
+        }
+        #endregion
+
+
+        #region 限制只能输入数字
+        private void tb_w_price_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //限制只能输入数字，Backspace键，小数点
+
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != '\b' && e.KeyChar != '.')
+
+            {
+
+                e.Handled = true;  //非以上键则禁止输入
+
+            }
+
+            if (e.KeyChar == '.' && tb_w_price.Text.Trim() == "") e.Handled = true; //禁止第一个字符就输入小数点
+
+            if (e.KeyChar == '.' && tb_w_price.Text.Contains(".")) e.Handled = true; //禁止输入多个小数点
+        }
+
+        private void tb_r_price_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //限制只能输入数字，Backspace键，小数点
+
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != '\b' && e.KeyChar != '.')
+
+            {
+
+                e.Handled = true;  //非以上键则禁止输入
+
+            }
+
+            if (e.KeyChar == '.' && tb_r_price.Text.Trim() == "") e.Handled = true; //禁止第一个字符就输入小数点
+
+            if (e.KeyChar == '.' && tb_r_price.Text.Contains(".")) e.Handled = true; //禁止输入多个小数点
+        }
+        #endregion
+
 
     }
 }

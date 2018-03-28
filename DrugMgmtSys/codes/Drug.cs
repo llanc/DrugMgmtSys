@@ -89,6 +89,21 @@ namespace DrugMgmtSys.codes
         /// <returns>影响的行数</returns>
         public int addDrug()
         {
+            string sql = string.Format("select * from tb_drug where d_name='{0}'", Name);
+            try
+            {
+                if ((int)MySqlTools.ExecuteScalar(sql) > 0)
+                {
+                    return -1;
+                }
+            }
+            catch (Exception)
+            {
+
+            }
+            
+            
+
             string add_sql = string.Format("INSERT INTO tb_drug (d_name,d_unit,d_spec,d_origin,d_lot_num,d_reserve,d_w_price,d_r_price) VALUES ('{0}', {1},'{2}','{3}','{4}',{5},{6},{7})",Name,Unit,Spec,Origin,Lot_num,Reserve,W_price,R_price);
 
             int result= MySqlTools.ExecuteNonQuery(add_sql);

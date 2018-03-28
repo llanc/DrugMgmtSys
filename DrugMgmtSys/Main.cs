@@ -160,6 +160,7 @@ namespace DrugMgmtSys
                 dt.Rows[i]["tb_progit"] = Convert.ToDouble(dt.Rows[i][8]) - Convert.ToDouble(dt.Rows[i][7]);
             }
             dataGridView_K.DataSource = dt;
+            getSum();
         }
 
         /// <summary>
@@ -218,9 +219,28 @@ namespace DrugMgmtSys
                 dt.Rows[i]["tb_progit"] = Convert.ToDouble(dt.Rows[i][8]) - Convert.ToDouble(dt.Rows[i][7]);
             }
             dataGridView_K.DataSource = dt;
+
+            getSum();
         }
 
         #endregion
+
+        private void getSum()
+        {
+            double sum_w = 0;
+            double sum_r = 0;
+            double sum_money = 0;
+            for (int i = 0; i < dataGridView_K.Rows.Count; i++)
+            {
+                sum_w += Convert.ToDouble(dataGridView_K.Rows[i].Cells["批发价"].Value)*Convert.ToDouble(dataGridView_K.Rows[i].Cells["库存"].Value);
+                sum_r += Convert.ToDouble(dataGridView_K.Rows[i].Cells["零售"].Value) * Convert.ToDouble(dataGridView_K.Rows[i].Cells["库存"].Value);
+                sum_money += Convert.ToDouble(dataGridView_K.Rows[i].Cells["利"].Value) * Convert.ToDouble(dataGridView_K.Rows[i].Cells["库存"].Value);
+            }
+            lb_w_sum.Text = sum_w.ToString() + "元";
+            lb_r_sum.Text = sum_r.ToString() + "元";
+            lb_money.Text = sum_money.ToString() + "元";
+
+        }
 
         #region 清空文本框
 
@@ -506,6 +526,51 @@ namespace DrugMgmtSys
         }
 
         #endregion
+
+        private void lb__Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            string caption = "温馨提示";
+            string message = "是否删除该记录？";
+            MessageBoxButtons btn = MessageBoxButtons.YesNo;
+            DialogResult result = new DialogResult();
+            result = MessageBox.Show(message, caption, btn);
+            if (result == System.Windows.Forms.DialogResult.Yes)
+            {
+                DateTime dt = dateTimePicker1.Value;
+                string time = dt.ToLongDateString().ToString();
+                string sql_day = string.Format("delete from tb_order where o_time='{0}'", time);
+                if (MySqlTools.ExecuteNonQuery(sql_day) > 0)
+                {
+                    MessageBox.Show("成功删除该记录！", "温馨提示");
+                    BindAndShow();
+                }
+            }
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            string caption = "温馨提示";
+            string message = "是否删除该记录？";
+            MessageBoxButtons btn = MessageBoxButtons.YesNo;
+            DialogResult result = new DialogResult();
+            result = MessageBox.Show(message, caption, btn);
+            if (result == System.Windows.Forms.DialogResult.Yes)
+            {
+                DateTime dt = dateTimePicker1.Value;
+                string time = dt.ToLongDateString().ToString();
+                string sql ="delete from tb_order";
+                if (MySqlTools.ExecuteNonQuery(sql) > 0)
+                {
+                    MessageBox.Show("成功删除该记录！", "温馨提示");
+                    BindAndShow();
+                }
+            }
+        }
     }
 }
 
