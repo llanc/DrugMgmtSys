@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DrugMgmtSys.exe" size="1460696">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DrugMgmtSys.exe" size="1461720">
       <assemblyIdentity name="DrugMgmtSys" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Cq0/xq5y1TZrfknden4DzvCbkhpk7AdJIlzZYKhN3FI=</dsig:DigestValue>
+        <dsig:DigestValue>mC1abziOJzMZA6TyBSL1vpsXyYIxIUWMdPaUZPxBcIM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

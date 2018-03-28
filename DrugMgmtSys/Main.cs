@@ -225,6 +225,9 @@ namespace DrugMgmtSys
 
         #endregion
 
+        /// <summary>
+        /// 计算库存合计信息
+        /// </summary>
         private void getSum()
         {
             double sum_w = 0;
@@ -531,7 +534,7 @@ namespace DrugMgmtSys
         {
 
         }
-
+        #region 药品销售记录删除
         private void button9_Click(object sender, EventArgs e)
         {
             string caption = "温馨提示";
@@ -571,6 +574,7 @@ namespace DrugMgmtSys
                 }
             }
         }
+        #endregion
     }
 }
 
